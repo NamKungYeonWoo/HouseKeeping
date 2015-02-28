@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">美乐门家政</string>
+    
+    <string name="item_housekeeping">保洁</string>
+    <string name="item_dryclean">干洗</string>
+    <string name="item_leather">皮具护理</string>
+    
+    <string name="menu_home">首页</string>
+    <string name="menu_order">订单</string>
+    <string name="menu_person">会员中心</string>
+     <string name="menu_phone">客服</string>    
+
+</resources>

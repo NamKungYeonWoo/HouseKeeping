@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Meilemen Housekeeping</string>
+    
+    <string name="item_housekeeping">Housekeeping</string>
+    <string name="item_dryclean">Dry-Clean</string>
+    <string name="item_leather">Leather Care</string>
+    
+    <string name="menu_home">Home</string>
+    <string name="menu_order">Order</string>
+    <string name="menu_person">Member</string>
+     <string name="menu_phone">Service</string>
+
+</resources>

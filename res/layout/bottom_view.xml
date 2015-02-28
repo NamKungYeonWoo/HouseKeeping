@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dip"
+    android:background="#ffffffff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/home_layout"
+        style="@style/main_bottom_bar_linear" >
+
+        <ImageView
+            android:id="@+id/home_image"
+            style="@style/main_bottom_bar_image" />
+
+        <TextView
+            android:id="@+id/home_text"
+            style="@style/main_bottom_bar_text"
+            android:text="@string/menu_home" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/order_layout"
+        style="@style/main_bottom_bar_linear" >
+
+        <ImageView
+            android:id="@+id/order_image"
+            style="@style/main_bottom_bar_image" />
+
+        <TextView
+            android:id="@+id/order_text"
+            style="@style/main_bottom_bar_text"
+            android:text="@string/menu_order" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/person_layout"
+        style="@style/main_bottom_bar_linear" >
+
+        <ImageView
+            android:id="@+id/person_image"
+            style="@style/main_bottom_bar_image" />
+
+        <TextView
+            android:id="@+id/person_text"
+            style="@style/main_bottom_bar_text"
+            android:text="@string/menu_person" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/service_layout"
+        style="@style/main_bottom_bar_linear" >
+
+        <ImageView
+            android:id="@+id/service_image"
+            style="@style/main_bottom_bar_image" />
+
+        <TextView
+            android:id="@+id/service_text"
+            style="@style/main_bottom_bar_text"
+            android:text="@string/menu_phone" />
+    </LinearLayout>
+
+</LinearLayout>

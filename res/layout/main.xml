@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+   <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:background="@drawable/title_bk" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textColor="#ff000000"
+            android:textStyle="bold"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="160dip" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="20dip"
+            android:layout_gravity="bottom"
+            android:background="#00ffffff"
+            android:gravity="center"
+             android:layout_marginTop="3dip"
+            android:orientation="horizontal" >
+                <View
+                    android:id="@+id/v_dot0"
+                    style="@style/dot_style"
+                    android:background="@drawable/dot_focused" />
+
+                <View
+                    android:id="@+id/v_dot1"
+                    style="@style/dot_style" />
+
+                <View
+                    android:id="@+id/v_dot2"
+                    style="@style/dot_style" />
+                
+                                <View
+                    android:id="@+id/v_dot3"
+                    style="@style/dot_style" />
+
+                <View
+                    android:id="@+id/v_dot4"
+                    style="@style/dot_style" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dip"
+        android:orientation="horizontal" >
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_weight="1.5"
+            android:layout_marginLeft="5dip"
+           android:layout_marginTop="5dip"
+           android:layout_marginBottom="5dip" 
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <Button  
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                 android:background="@drawable/housekeeping" />
+            <TextView  
+                android:text="@string/item_housekeeping"
+                android:textSize="20sp"
+                 android:id="@+id/btn1_text"
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:gravity="center"
+               android:textColor="#ff000000"  />
+        </LinearLayout>
+        <LinearLayout 
+             android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dip"
+           android:layout_marginTop="5dip"
+           android:layout_marginBottom="5dip" 
+            android:layout_height="match_parent" 
+            android:orientation="vertical">
+              <Button  
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                 android:background="@drawable/dryclean" />
+            <TextView  
+                android:id="@+id/btn2_text"
+                android:text="@string/item_dryclean"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:gravity="center"
+               android:textColor="#ff000000"  />
+        </LinearLayout>
+         <LinearLayout 
+             android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dip"
+           android:layout_marginTop="5dip"
+           android:layout_marginBottom="5dip" 
+           android:layout_marginRight="5dip"
+            android:layout_height="match_parent" 
+            android:orientation="vertical">
+             <Button  
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                 android:background="@drawable/sofa" />
+            <TextView  
+                 android:id="@+id/btn3_text"
+                android:text="@string/item_leather"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="30dip"
+                android:gravity="center"
+               android:textColor="#ff000000"  />
+        </LinearLayout>     
+     </LinearLayout>
+     
+     <LinearLayout
+           android:id="@+id/content"
+           android:layout_width="fill_parent"
+           android:layout_height="0dp" 
+           android:layout_weight="1" 
+           android:orientation="vertical">
+     </LinearLayout>
+     
+      <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/bottom_view" />
+    </LinearLayout>
+
+</LinearLayout>
