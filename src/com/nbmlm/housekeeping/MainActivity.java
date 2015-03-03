@@ -257,13 +257,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onBackPressed() {
         new AlertDialog.Builder(this).setTitle(R.string.dialog_quit)
                 .setIcon(android.R.drawable.ic_dialog_info)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         MainActivity.this.finish();
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //
