@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ffffffff"
-    android:orientation="vertical" >
+    android:background="#ffdadada"
+    android:orientation="vertical">
 
-   <RelativeLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="40dip"
         android:background="@drawable/title_bk" >
@@ -22,7 +22,7 @@
 
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="160dip" >
+        android:layout_height="200dip" >
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp"
@@ -59,88 +59,92 @@
                     style="@style/dot_style" />
         </LinearLayout>
     </FrameLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dip"
-        android:orientation="horizontal" >
-        <LinearLayout
-            android:layout_width="0dip"
-            android:layout_weight="1.5"
-            android:layout_marginLeft="5dip"
-           android:layout_marginTop="5dip"
-           android:layout_marginBottom="5dip" 
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-            <Button  
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:padding="5dp">
+
+        <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="148dp"
+                android:background="#ff883cfa">
+
+            <Button
                 android:id="@+id/btn1"
                 android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                 android:background="@drawable/housekeeping" />
-            <TextView  
+                android:layout_height="wrap_content"
+                 android:background="@drawable/broom"
+                 android:layout_gravity="center"
+                 android:layout_marginTop="5dp"/>
+
+            <TextView
                 android:text="@string/item_housekeeping"
                 android:textSize="20sp"
                  android:id="@+id/btn1_text"
-                android:layout_width="match_parent"
-                android:layout_height="30dip"
-                android:gravity="center"
-               android:textColor="#ff000000"  />
-        </LinearLayout>
-        <LinearLayout 
-             android:layout_width="0dip"
-            android:layout_weight="1"
-            android:layout_marginLeft="5dip"
-           android:layout_marginTop="5dip"
-           android:layout_marginBottom="5dip" 
-            android:layout_height="match_parent" 
-            android:orientation="vertical">
-              <Button  
-                android:id="@+id/btn2"
                 android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                 android:background="@drawable/dryclean" />
-            <TextView  
-                android:id="@+id/btn2_text"
-                android:text="@string/item_dryclean"
-                android:textSize="20sp"
-                android:layout_width="match_parent"
-                android:layout_height="30dip"
-                android:gravity="center"
-               android:textColor="#ff000000"  />
-        </LinearLayout>
-         <LinearLayout 
-             android:layout_width="0dip"
-            android:layout_weight="1"
-            android:layout_marginLeft="5dip"
-           android:layout_marginTop="5dip"
-           android:layout_marginBottom="5dip" 
-           android:layout_marginRight="5dip"
-            android:layout_height="match_parent" 
-            android:orientation="vertical">
-             <Button  
-                android:id="@+id/btn3"
-                android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                 android:background="@drawable/sofa" />
-            <TextView  
-                 android:id="@+id/btn3_text"
-                android:text="@string/item_leather"
-                android:textSize="20sp"
-                android:layout_width="match_parent"
-                android:layout_height="30dip"
-                android:gravity="center"
-               android:textColor="#ff000000"  />
-        </LinearLayout>     
-     </LinearLayout>
-     
-     <LinearLayout
-           android:id="@+id/content"
-           android:layout_width="fill_parent"
-           android:layout_height="0dp" 
-           android:layout_weight="1" 
-           android:orientation="vertical">
-     </LinearLayout>
-     
-      <LinearLayout
+                android:layout_height="wrap_content"
+                android:gravity="bottom|left"
+               android:textColor="#ffffffff"
+               android:layout_gravity="bottom"
+               android:layout_marginLeft="10dp"/>
+        </FrameLayout>
+
+        <FrameLayout
+                android:layout_width="173dp"
+                android:layout_height="148dp"
+                android:background="#ff34f3a5"
+                android:layout_gravity="left|bottom">
+
+            <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/washer"
+                    android:layout_gravity="center"
+                    />
+
+            <TextView
+                    android:text="@string/item_dryclean"
+                    android:textSize="18sp"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|left"
+                    android:textColor="#ffffffff"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+                android:layout_width="173dp"
+                android:layout_height="148dp"
+                android:background="#fffec80c"
+                android:layout_gravity="right|bottom">
+
+            <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sofa"
+                    android:layout_gravity="center"/>
+
+            <TextView
+                    android:text="@string/item_leather"
+                    android:textSize="18sp"
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|left"
+                    android:textColor="#ffffffff"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
 

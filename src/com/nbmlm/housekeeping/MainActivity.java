@@ -56,7 +56,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		mImageResId = new int[] { R.drawable.a, R.drawable.b, R.drawable.a,R.drawable.a, R.drawable.a};
+		mImageResId = new int[] { R.drawable.b, R.drawable.a, R.drawable.b,R.drawable.a, R.drawable.b};
 
 		mImageViews = new ArrayList<ImageView>();
 
