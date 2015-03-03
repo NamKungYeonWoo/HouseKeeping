@@ -7,6 +7,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
@@ -200,9 +201,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		for (int i = 0; i < mBottomView.viewNum; i++) {
 			if (v.getId() == mBottomView.linears_id[i]) {
-				for(int j= 0; j < mBottomView.viewNum;j++) {
-					mBottomView.images[j].setBackgroundResource(mBottomView.images_unselected[j]);
-					mBottomView.texts[j].setTextColor(getResources().getColor(R.color.bottom_text_unselected));
+//				for(int j= 0; j < mBottomView.viewNum;j++) {
+//					mBottomView.images[j].setBackgroundResource(mBottomView.images_unselected[j]);
+//					mBottomView.texts[j].setTextColor(getResources().getColor(R.color.bottom_text_unselected));
+//				}
+				if(mCurrentIndex>=0 && mCurrentIndex<mBottomView.viewNum){
+					mBottomView.images[mCurrentIndex].setBackgroundResource(mBottomView.images_unselected[mCurrentIndex]);
+					mBottomView.texts[mCurrentIndex].setTextColor(getResources().getColor(R.color.bottom_text_unselected));
 				}
 				mCurrentIndex = i ;
 				mBottomView.images[i].setBackgroundResource(i == mCurrentIndex ? mBottomView.images_selected[i] : mBottomView.images_unselected[i]);
@@ -210,11 +215,19 @@ public class MainActivity extends Activity implements View.OnClickListener{
 			}
 		}
 		if(v==mHousekeeping){
-			//
+			Intent intentitem = new Intent();
+	    	intentitem.setClassName("com.nbmlm.housekeeping","com.nbmlm.housekeeping.HousekeepingOrderActivity");
+            startActivity(intentitem);
 		}else if(v==mDryClean){
-			//
+			Intent intentitem = new Intent();
+	    	intentitem.setClassName("com.nbmlm.housekeeping","com.nbmlm.housekeeping.DryCleanOrderActivity");
+	    	intentitem.putExtra("isDryClean", true);
+            startActivity(intentitem);
 		}else if(v==mLeatherCare){
-			//
+			Intent intentitem = new Intent();
+	    	intentitem.setClassName("com.nbmlm.housekeeping","com.nbmlm.housekeeping.DryCleanOrderActivity");
+	    	intentitem.putExtra("isDryClean", false);
+            startActivity(intentitem);
 		} 
 		
 	}
