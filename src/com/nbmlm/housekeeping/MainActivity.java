@@ -7,6 +7,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -69,7 +71,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
 			mImageViews.add(imageView);
 		}
 
-		
 		mDots = new ArrayList<View>();
 		mDots.add(findViewById(R.id.v_dot0));
 		mDots.add(findViewById(R.id.v_dot1));
@@ -162,8 +163,28 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
 		@Override
 		public Object instantiateItem(View arg0, int arg1) {
-			((ViewPager) arg0).addView(mImageViews.get(arg1% mImageViews.size()));
-			return mImageViews.get(arg1% mImageViews.size());
+            int index = arg1 % mImageViews.size();
+            ImageView v = mImageViews.get(index);
+            if ( index%2 == 0 ) {
+                v.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent aboutintent = new Intent(MainActivity.this, AboutActivity.class);
+                        startActivity(aboutintent);
+                    }
+                });
+            }else{
+                v.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent regintent = new Intent(MainActivity.this, RegisterActivity.class);
+                        startActivity(regintent);
+                    }
+                });
+            }
+			((ViewPager) arg0).addView(v);
+            return v;
+			//return mImageViews.get(arg1% mImageViews.size());
 		}
 
 		@Override
@@ -231,4 +252,22 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		} 
 		
 	}
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setTitle(R.string.dialog_quit)
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //
+                    }
+                }).show();
+    }
 }

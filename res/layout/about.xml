@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:background="@drawable/title_bk"
+            android:id="@+id/relativeLayout">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:layout_centerInParent="true"
+                android:text="@string/title_service"
+                android:textColor="#ff000000"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+    </RelativeLayout>
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="507dp"
+            android:text="@string/about"
+            android:id="@+id/textView"
+            android:layout_margin="10dp"
+            android:textColor="#ff26a1ff"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="5dp"
+            />
+
+    <Button
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:text="@string/button_confirm"
+            android:id="@+id/buttonConfirm"
+            android:background="@drawable/buttonlarge"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"/>
+
+</LinearLayout>

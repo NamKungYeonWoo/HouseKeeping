@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="background">#ffdadada</color>
     <color name="bottom_text_selected">#ff000000</color>
     <color name="bottom_text_unselected">#ff82858b</color>
     <color name="rect_unselected">#ffdddddd</color>
     <color name="rect_selected">#ff08f9f2</color>
-    
+
 
 </resources>

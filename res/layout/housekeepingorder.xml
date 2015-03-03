@@ -11,7 +11,7 @@
 
   <LinearLayout
       android:layout_width="fill_parent"
-      android:layout_height="match_parent"
+      android:layout_height="wrap_content"
       android:background="#ffdddddd"
       android:orientation="vertical" >
 
@@ -33,7 +33,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="18dip"
         android:background="#ffffffff"
         android:orientation="horizontal"
         android:gravity="center_vertical">
@@ -87,7 +87,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="2.5"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="18dip"
         android:background="#ffffffff"
         android:orientation="vertical"
         android:gravity="center_vertical">
@@ -190,7 +190,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="18dip"
         android:background="#ffffffff"
         android:orientation="horizontal"
         android:gravity="center_vertical">
@@ -242,7 +242,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="2"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="18dip"
         android:background="#ffffffff"
         android:orientation="vertical"
         android:gravity="center_vertical">
@@ -282,7 +282,8 @@
                 android:paddingTop="5dp"
                 android:singleLine="true"
                 android:textColor="#ff000000"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:layout_marginTop="2dp"/>
         
         </LinearLayout>
         <LinearLayout 
@@ -330,14 +331,15 @@
                 android:singleLine="true"
                 android:clickable="true"
                 android:hint="@string/order_phonehit"
-                android:layout_gravity="left|center_vertical"/>        
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="2dp"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout 
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="18dip"
         android:background="#ffffffff"
         android:orientation="horizontal"
         android:gravity="center_vertical">
@@ -366,7 +368,8 @@
                 android:singleLine="false"
                 android:scrollbars="vertical"
                 android:clickable="true"
-                android:layout_gravity="left|center_vertical"/>
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="2dp"/>
         
     </LinearLayout>
 
@@ -374,10 +377,10 @@
              android:id="@+id/btn_commit"
              android:layout_marginRight="30dp"
              android:layout_marginLeft="30dp"
-             android:layout_marginTop="25dp"
-             android:layout_marginBottom="5dp"
-             android:layout_width="fill_parent"
-       		 android:layout_height="fill_parent"
+             android:layout_marginTop="10dp"
+             android:layout_marginBottom="10dp"
+             android:layout_width="300dp"
+       		 android:layout_height="50dp"
       	  	 android:text="@string/order_order"
         	 android:textSize="16sp"
         	 android:textColor="#ffffffff"
@@ -385,7 +388,7 @@
         	 android:paddingTop="10dp"
         	 android:paddingRight="5dp"
         	 android:paddingBottom="10dp"
-        	 android:background="#ff2d93de"
+        	 android:background="@drawable/buttonlarge"
         	 android:layout_gravity="center_horizontal|center_vertical"/>
   </LinearLayout>
  </ScrollView>

@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">Meilemen Housekeeping</string>
 
-    <string name="app_name">美乐门家政</string>
+    <string name="title_service">Meilemem Service</string>
+    <string name="title_register">Register</string>
+
+    <string name="item_housekeeping">Housekeeping</string>
+    <string name="item_dryclean">Dry-Clean</string>
+    <string name="item_leather">Leather Care</string>
     
-    <string name="item_housekeeping">保洁</string>
-    <string name="item_dryclean">干洗</string>
-    <string name="item_leather">皮具护理</string>
-    
-    <string name="menu_home">首页</string>
-    <string name="menu_order">订单</string>
-    <string name="menu_person">会员中心</string>
-    <string name="menu_phone">客服</string>  
-     
+    <string name="menu_home">Home</string>
+    <string name="menu_order">Order</string>
+    <string name="menu_person">Member</string>
+    <string name="menu_phone">Service</string>
+
     <string name="order_order">发起预约</string>
     <string name="order_datetime">服务时间</string>
     <string name="order_datetimehit">请选择时间</string>
@@ -27,8 +29,17 @@
     <string name="order_phone">手机号</string>
     <string name="order_phonehit">请输入手机号</string>
     <string name="order_note">\n\n备注:\n\n</string>
-    
-    <string name="ok">确定</string>
-    <string name="cancel">取消</string>
 
+    <string name="dialog_quit">Are you sure to quit?</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
+
+    <string name="button_confirm">Confirm</string>
+
+    <string name="about">About</string>
+
+    <string name="register_phonenumber">Phone Number</string>
+    <string name="register_getcode">getcode</string>
+    <string name="register_code">Code</string>
+    <string name="register_login">Login</string>
 </resources>
