@@ -266,7 +266,21 @@ public class DryCleanOrderActivity extends Activity implements View.OnClickListe
 				     .setNegativeButton(getString(R.string.cancel), null).show();
 	   }else if(view==mCommit){
 		   if(checkOrderValid()){
-			   this.finish(); 
+               String datetime = mDateTime.getText().toString();
+               String count = mSubCount.getText().toString();
+               String price = mSubTotal.getText().toString();
+               String address = mAddress.getText().toString();
+               String contacter = mContacts.getText().toString();
+               String phone = mPhoneNumber.getText().toString();
+               String note = mNote.getText().toString();
+               if (mServiceType.equals(getString(R.string.item_dryclean))){
+                   DrycleanOrder order = new DrycleanOrder(datetime,count, price,address, contacter, phone,note);
+                   OrderManager.getInstance().addOrder(order);
+               }else{
+                   LeatherOrder order = new LeatherOrder(datetime,count,price,address, contacter, phone, note);
+                   OrderManager.getInstance().addOrder(order);
+               }
+			   this.finish();
 		   }
 	   }else if(view==mType){
 		   showServiceItem();

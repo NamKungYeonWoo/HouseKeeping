@@ -33,7 +33,7 @@ public class HousekeepingOrderActivity extends Activity implements View.OnClickL
 	private EditText mPhoneNumber;
 	private EditText mNote;
 	
-	private int mCurrentHours=0;
+	private int mCurrentHours=2;
 	
 	private AlertDialog mAlertDialog;
 	private EditText mAddressEditText;
@@ -106,17 +106,17 @@ public class HousekeepingOrderActivity extends Activity implements View.OnClickL
     	return ret;
     }
     private void clearSelected(){
-    	if(mCurrentHours >=0 && mCurrentHours<3){
+    	if(mCurrentHours >=2 && mCurrentHours<5){
     		switch(mCurrentHours){
-    		  case 0:
+    		  case 2:
     			  mHours2.setTextColor(getResources().getColor(R.color.bottom_text_selected));
     			  mHours2.setBackgroundResource(R.drawable.buttonshape_normal);
     			  break;
-    		  case 1:
+    		  case 3:
     			  mHours3.setTextColor(getResources().getColor(R.color.bottom_text_selected));
     			  mHours3.setBackgroundResource(R.drawable.buttonshape_normal);
     			  break;
-    		  case 2:
+    		  case 4:
     			  mHours4.setTextColor(getResources().getColor(R.color.bottom_text_selected));
     			  mHours4.setBackgroundResource(R.drawable.buttonshape_normal);
     			  break;
@@ -181,23 +181,31 @@ public class HousekeepingOrderActivity extends Activity implements View.OnClickL
 				     .setNegativeButton(getString(R.string.cancel), null).show();
 	   }else if(view==mCommit){
 		   if(checkOrderValid()){
+               String datetime = mDateTime.getText().toString();
+               String time = Integer.toString(mCurrentHours);
+               String address = mAddress.getText().toString();
+               String contacter = mContacts.getText().toString();
+               String phone = mPhoneNumber.getText().toString();
+               String note = mNote.getText().toString();
+               HousekeepingOrder order = new HousekeepingOrder(datetime, time, address, contacter, phone,note);
+               OrderManager.getInstance().addOrder(order);
 			   this.finish(); 
 		   }
 	   }else if(view==mHours2){
 		   clearSelected();
 		   mHours2.setTextColor(getResources().getColor(R.color.rect_selected));
 		   mHours2.setBackgroundResource(R.drawable.buttonshape_selected);
-		   mCurrentHours = 0;
+		   mCurrentHours = 2;
 	   }else if(view==mHours3){
 		   clearSelected();
 		   mHours3.setTextColor(getResources().getColor(R.color.rect_selected));
 		   mHours3.setBackgroundResource(R.drawable.buttonshape_selected);
-		   mCurrentHours = 1;
+		   mCurrentHours = 3;
 	   }else if(view==mHours4){
 		   clearSelected();
 		   mHours4.setTextColor(getResources().getColor(R.color.rect_selected));
 		   mHours4.setBackgroundResource(R.drawable.buttonshape_selected);
-		   mCurrentHours = 2;
+		   mCurrentHours = 4;
 	   }
 	}
 
