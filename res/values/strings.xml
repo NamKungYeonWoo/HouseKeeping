@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
     <string name="app_name">美乐门家政</string>
 
     <string name="title_service">美乐门服务</string>
@@ -29,7 +30,13 @@
     <string name="order_phone">手机号</string>
     <string name="order_phonehit">请输入手机号</string>
     <string name="order_note">\n\n备注:\n\n</string>
+    
 
+    <string name="order_item">请选择服务项目</string> 
+    <string name="order_type">服务类型</string>
+    <string name="order_subcount">总数量(件):</string>
+    <string name="order_subtotal">总价格(元):</string>
+    
     <string name="dialog_quit">确定要退出？</string>
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
