@@ -233,10 +233,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		for (int i = 0; i < mBottomView.viewNum; i++) {
 			if (v.getId() == mBottomView.linears_id[i]) {
-//				for(int j= 0; j < mBottomView.viewNum;j++) {
-//					mBottomView.images[j].setBackgroundResource(mBottomView.images_unselected[j]);
-//					mBottomView.texts[j].setTextColor(getResources().getColor(R.color.bottom_text_unselected));
-//				}
 				if(mCurrentIndex==i&&mCurrentIndex==0)break;
 				if(mCurrentIndex>=0 && mCurrentIndex<mBottomView.viewNum){
 					mBottomView.images[mCurrentIndex].setBackgroundResource(mBottomView.images_unselected[mCurrentIndex]);
@@ -251,9 +247,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
 			    	intentitem.setClassName("com.nbmlm.housekeeping","com.nbmlm.housekeeping.MainActivity");
 		            startActivity(intentitem);
 				}else if(mCurrentIndex==1){//order
-					Log.e("", "order");
+					Intent orderintent = new Intent(MainActivity.this, OrdersActivity.class);
+                    startActivity(orderintent);
+					resestFoucus();
 				}else if(mCurrentIndex==2){//contacts
-					Log.e("", "contacts");
+					Intent regintent = new Intent(MainActivity.this, RegisterActivity.class);
+                    startActivity(regintent);
+					resestFoucus();
 				}else if(mCurrentIndex==3){//call
 					mAlertDialog = new AlertDialog.Builder(MainActivity.this)
 						.setTitle(R.string.phone_title)

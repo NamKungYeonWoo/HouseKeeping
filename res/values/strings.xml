@@ -59,4 +59,12 @@
     <string name="register_getcode">获取验证码</string>
     <string name="register_code">请输入验证码</string>
     <string name="register_login">登录</string>
+    
+    <string name="order_title">我的订单</string>
+    <string name="order_cancel">取消订单</string>
+    <string name="order_empty">您没有订单</string>
+    <string name="order_icon">约</string>
+    <string name="order_status_wait">等待接单</string>
+    <string name="order_status_valid">无效订单</string>
+    <string name="order_status_over">交易完成</string>
 </resources>
