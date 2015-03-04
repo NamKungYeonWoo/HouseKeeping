@@ -207,7 +207,7 @@ public class DryCleanOrderActivity extends Activity implements View.OnClickListe
     	mItemCount = new int[mItemName.length];
         for(int i=0;i< mItemName.length;i++){
         	Map map = new HashMap<String, Object>();
-        	map.put("image", R.drawable.location);//TODO
+        	map.put("image", R.drawable.sample);//TODO
             map.put("name", mItemName[i]);
             map.put("price", mItemPrice[i]);
             map.put("count", mItemCount[i]);

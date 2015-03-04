@@ -15,6 +15,9 @@
     <string name="menu_order">订单</string>
     <string name="menu_person">会员中心</string>
     <string name="menu_phone">客服</string>
+    <string name="phone_title">全国服务热线</string>
+    <string name="phone_number">4008-878-4848</string>
+    <string name="phone_call">拨打</string>
 
     <string name="order_order">发起预约</string>
     <string name="order_datetime">服务时间</string>

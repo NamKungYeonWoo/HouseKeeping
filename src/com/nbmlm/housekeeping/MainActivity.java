@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
@@ -43,6 +44,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 	
 	BottomViewItem mBottomView;
 	private int mCurrentIndex = 0;
+	
+	private AlertDialog mAlertDialog;
 
 	// An ExecutorService that can schedule commands to run after a given delay,
 	// or to execute periodically.
@@ -217,6 +220,14 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
 		}
 	}
+	
+	private void resestFoucus(){
+		mBottomView.images[mCurrentIndex].setBackgroundResource(mBottomView.images_unselected[mCurrentIndex]);
+		mBottomView.texts[mCurrentIndex].setTextColor(getResources().getColor(R.color.bottom_text_unselected));
+		mCurrentIndex = 0 ;
+		mBottomView.images[mCurrentIndex].setBackgroundResource(mBottomView.images_selected[mCurrentIndex]);
+		mBottomView.texts[mCurrentIndex].setTextColor(getResources().getColor(R.color.bottom_text_selected));
+	}
 
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -226,6 +237,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 //					mBottomView.images[j].setBackgroundResource(mBottomView.images_unselected[j]);
 //					mBottomView.texts[j].setTextColor(getResources().getColor(R.color.bottom_text_unselected));
 //				}
+				if(mCurrentIndex==i&&mCurrentIndex==0)break;
 				if(mCurrentIndex>=0 && mCurrentIndex<mBottomView.viewNum){
 					mBottomView.images[mCurrentIndex].setBackgroundResource(mBottomView.images_unselected[mCurrentIndex]);
 					mBottomView.texts[mCurrentIndex].setTextColor(getResources().getColor(R.color.bottom_text_unselected));
@@ -233,6 +245,39 @@ public class MainActivity extends Activity implements View.OnClickListener{
 				mCurrentIndex = i ;
 				mBottomView.images[i].setBackgroundResource(i == mCurrentIndex ? mBottomView.images_selected[i] : mBottomView.images_unselected[i]);
 				mBottomView.texts[i].setTextColor(i == mCurrentIndex ? getResources().getColor(R.color.bottom_text_selected) : getResources().getColor(R.color.bottom_text_unselected));
+				if(mCurrentIndex==0){//home
+					finish();
+					Intent intentitem = new Intent();
+			    	intentitem.setClassName("com.nbmlm.housekeeping","com.nbmlm.housekeeping.MainActivity");
+		            startActivity(intentitem);
+				}else if(mCurrentIndex==1){//order
+					Log.e("", "order");
+				}else if(mCurrentIndex==2){//contacts
+					Log.e("", "contacts");
+				}else if(mCurrentIndex==3){//call
+					mAlertDialog = new AlertDialog.Builder(MainActivity.this)
+						.setTitle(R.string.phone_title)
+						.setIcon(android.R.drawable.ic_dialog_info)
+						.setMessage(R.string.phone_number)
+						.setPositiveButton(getString(R.string.phone_call), new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								resestFoucus();
+								mAlertDialog.dismiss();
+								Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + getString(R.string.phone_number)));
+								startActivity(intent);
+							}
+						})
+						.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								resestFoucus();
+								mAlertDialog.dismiss();
+							}
+						})
+						.setCancelable(false)
+						.show();
+				}
 			}
 		}
 		if(v==mHousekeeping){
