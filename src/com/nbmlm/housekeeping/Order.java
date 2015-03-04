@@ -1,9 +1,12 @@
 package com.nbmlm.housekeeping;
 
+import android.content.Context;
+
 /**
  * Created by Home on 2015/3/4.
  */
 public class Order {
+    protected Context mContext;
     protected int mType;
     protected String mDateTime;
     protected String mAddress;
@@ -11,7 +14,8 @@ public class Order {
     protected String mPhoneNumber;
     protected String mNotes;
 
-    public Order(String datetime, String address, String contacter, String phone, String notes){
+    public Order(Context context, String datetime, String address, String contacter, String phone, String notes){
+        mContext = context;
         mDateTime = datetime;
         mAddress = address;
         mContacter = contacter;

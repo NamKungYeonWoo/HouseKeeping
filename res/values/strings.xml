@@ -39,7 +39,8 @@
     <string name="order_type">服务类型</string>
     <string name="order_subcount">总数量(件):</string>
     <string name="order_subtotal">总价格(元):</string>
-    
+    <string name="order_success">预约成功</string>
+
     <string name="dialog_quit">确定要退出？</string>
     <string name="ok">确定</string>
     <string name="cancel">取消</string>

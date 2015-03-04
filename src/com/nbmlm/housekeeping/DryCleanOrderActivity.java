@@ -274,13 +274,23 @@ public class DryCleanOrderActivity extends Activity implements View.OnClickListe
                String phone = mPhoneNumber.getText().toString();
                String note = mNote.getText().toString();
                if (mServiceType.equals(getString(R.string.item_dryclean))){
-                   DrycleanOrder order = new DrycleanOrder(datetime,count, price,address, contacter, phone,note);
+                   DrycleanOrder order = new DrycleanOrder(this, datetime,count, price,address, contacter, phone,note);
                    OrderManager.getInstance().addOrder(order);
                }else{
-                   LeatherOrder order = new LeatherOrder(datetime,count,price,address, contacter, phone, note);
+                   LeatherOrder order = new LeatherOrder(this, datetime,count,price,address, contacter, phone, note);
                    OrderManager.getInstance().addOrder(order);
                }
-			   this.finish();
+               new AlertDialog.Builder(this)
+                       .setMessage(getString(R.string.order_success))
+                       .setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialogInterface, int i) {
+                               DryCleanOrderActivity.this.finish();
+                           }
+                       })
+                       .setCancelable(false)
+                       .show();
+			   //this.finish();
 		   }
 	   }else if(view==mType){
 		   showServiceItem();

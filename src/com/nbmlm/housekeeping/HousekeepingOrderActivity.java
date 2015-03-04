@@ -187,9 +187,18 @@ public class HousekeepingOrderActivity extends Activity implements View.OnClickL
                String contacter = mContacts.getText().toString();
                String phone = mPhoneNumber.getText().toString();
                String note = mNote.getText().toString();
-               HousekeepingOrder order = new HousekeepingOrder(datetime, time, address, contacter, phone,note);
+               HousekeepingOrder order = new HousekeepingOrder(this,datetime, time, address, contacter, phone,note);
                OrderManager.getInstance().addOrder(order);
-			   this.finish(); 
+               new AlertDialog.Builder(this)
+                   .setMessage(getString(R.string.order_success))
+                   .setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
+                       @Override
+                       public void onClick(DialogInterface dialogInterface, int i) {
+                           HousekeepingOrderActivity.this.finish();
+                       }
+                   })
+                   .setCancelable(false)
+                   .show();
 		   }
 	   }else if(view==mHours2){
 		   clearSelected();

@@ -1,7 +1,11 @@
 package com.nbmlm.housekeeping;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * Created by Home on 2015/3/4.
@@ -25,8 +29,17 @@ public class OrderManager {
     }
     public void addOrder(Order order){
         mOrderList.add(order);
+        dumpOrder();
     }
     public void removeOrder(Order order){
         mOrderList.remove(order);
+        dumpOrder();
+    }
+    public void dumpOrder(){
+        Iterator<Order> iter = mOrderList.iterator();
+        while(iter.hasNext()) {
+            Order order = iter.next();
+            Log.d("dongbin", order.toString());
+        }
     }
 }
